@@ -1,12 +1,14 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
-import { getProjects } from "../../actions/projects";
+import { getProjects, deleteProjects } from "../../actions/projects";
 
 export class Projects extends Component {
   static propTypes = {
-    projects: PropTypes.array.isRequired
+    projects: PropTypes.array.isRequired,
+    getProjects: PropTypes.func.isRequired,
+    deleteProjects: PropTypes.func.isRequired
   };
 
   componentDidMount() {
@@ -15,9 +17,35 @@ export class Projects extends Component {
 
   render() {
     return (
-      <div>
-        <h1> Project List </h1>
-      </div>
+      <Fragment>
+        <h2> Projects </h2>{" "}
+        <table className="table">
+          <thead>
+            <tr>
+              <th> ID </th> <th> Name </th> <th> Email </th> <th> Project </th>{" "}
+              <th />
+            </tr>{" "}
+          </thead>{" "}
+          <tbody>
+            {" "}
+            {this.props.projects.map(project => (
+              <tr key={project.id}>
+                <td> {project.id} </td> <td> {project.name} </td>{" "}
+                <td> {project.email} </td> <td> {project.message} </td>{" "}
+                <td>
+                  <button
+                    onClick={this.props.deleteProjects.bind(this, project.id)}
+                    className="btn"
+                  >
+                    {" "}
+                    Delete{" "}
+                  </button>{" "}
+                </td>{" "}
+              </tr>
+            ))}{" "}
+          </tbody>{" "}
+        </table>{" "}
+      </Fragment>
     );
   }
 }
@@ -28,5 +56,8 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getProjects }
+  {
+    getProjects,
+    deleteProjects
+  }
 )(Projects);

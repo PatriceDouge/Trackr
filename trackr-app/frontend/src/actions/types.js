@@ -1,1 +1,2 @@
 export const GET_PROJECTS = "GET_PROJECTS";
+export const DELETE_PROJECTS = "DELETE_PROJECTS";
