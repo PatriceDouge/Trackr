@@ -2,13 +2,13 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
-import { getProjects, deleteProjects } from "../../actions/projects";
+import { getProjects, deleteProject, addProject } from "../../actions/projects";
 
 export class Projects extends Component {
   static propTypes = {
     projects: PropTypes.array.isRequired,
     getProjects: PropTypes.func.isRequired,
-    deleteProjects: PropTypes.func.isRequired
+    deleteProject: PropTypes.func.isRequired
   };
 
   componentDidMount() {
@@ -34,7 +34,7 @@ export class Projects extends Component {
                 <td> {project.email} </td> <td> {project.message} </td>{" "}
                 <td>
                   <button
-                    onClick={this.props.deleteProjects.bind(this, project.id)}
+                    onClick={this.props.deleteProject.bind(this, project.id)}
                     className="btn"
                   >
                     {" "}
@@ -58,6 +58,6 @@ export default connect(
   mapStateToProps,
   {
     getProjects,
-    deleteProjects
+    deleteProject
   }
 )(Projects);
