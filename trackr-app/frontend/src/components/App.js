@@ -7,6 +7,7 @@ import AlertTemplate from "react-alert-template-basic";
 
 import Navbar from "./layout/Navbar";
 import Dashboard from "./dashboard/Dashboard";
+import Alerts from "./layout/Alerts";
 import store from "../store";
 
 //alert options
@@ -22,8 +23,7 @@ class App extends Component {
         <AlertProvider template={AlertTemplate} {...alertOptions}>
           <Router>
             <div className="app">
-              <Navbar />
-              <Dashboard />
+              <Navbar /> {/* <Alerts /> */} <Dashboard />
             </div>
           </Router>
         </AlertProvider>

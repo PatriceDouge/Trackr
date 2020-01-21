@@ -18,33 +18,36 @@ export class Projects extends Component {
   render() {
     return (
       <Fragment>
-        <h2> Projects </h2>{" "}
+        <h2> Projects </h2>
         <table className="table">
           <thead>
             <tr>
-              <th> ID </th> <th> Name </th> <th> Email </th> <th> Project </th>{" "}
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Project</th>
               <th />
-            </tr>{" "}
-          </thead>{" "}
+            </tr>
+          </thead>
           <tbody>
-            {" "}
             {this.props.projects.map(project => (
               <tr key={project.id}>
-                <td> {project.id} </td> <td> {project.name} </td>{" "}
-                <td> {project.email} </td> <td> {project.message} </td>{" "}
+                <td>{project.id}</td>
+                <td>{project.name}</td>
+                <td>{project.email}</td>
+                <td>{project.message}</td>
                 <td>
                   <button
                     onClick={this.props.deleteProject.bind(this, project.id)}
                     className="btn"
                   >
-                    {" "}
-                    Delete{" "}
-                  </button>{" "}
-                </td>{" "}
+                    Delete
+                  </button>
+                </td>
               </tr>
-            ))}{" "}
-          </tbody>{" "}
-        </table>{" "}
+            ))}
+          </tbody>
+        </table>
       </Fragment>
     );
   }

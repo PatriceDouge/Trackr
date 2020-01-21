@@ -76,11 +76,11 @@ export class Form extends Component {
               />
             </div>
             <button
-              class="btn waves-effect waves-light"
+              className="btn waves-effect waves-light"
               type="submit"
               name="action"
             >
-              Submit <i class="material-icons right"> send </i>
+              Submit <i className="material-icons right"> send </i>
             </button>
           </div>
         </form>

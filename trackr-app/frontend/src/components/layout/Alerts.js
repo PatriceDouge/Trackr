@@ -4,8 +4,11 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { withAlert } from "react-alert";
 
 export class Alerts extends Component {
+  componentDidMount() {
+    this.props.alert.show("It works");
+  }
   render() {
-    return <Router />;
+    return <Fragment />;
   }
 }
 

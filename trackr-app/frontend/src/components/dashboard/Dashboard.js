@@ -17,14 +17,14 @@ class Dashboard extends Component {
               }}
               className="btn btn-large waves-effect waves-light hoverable blue accent-3"
             >
-              Logout{" "}
-            </button>{" "}
+              Logout
+            </button>
           </div>
           <div className="col s9">
             <Projects />
             <Form />
-          </div>{" "}
-        </div>{" "}
+          </div>
+        </div>
       </div>
     );
   }
