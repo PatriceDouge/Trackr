@@ -1,3 +1,8 @@
+/**
+ * Schema to represent User and its fields
+ * Where projects/to do/in progress/etc will also be defined
+ */
+
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
