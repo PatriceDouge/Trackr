@@ -1,12 +1,14 @@
 {
-  "name": "backend",
+  "name": "src",
   "version": "1.0.0",
-  "description": "Backend for Trackr",
+  "description": "Source Code for Trackr",
   "main": "server.js",
   "scripts": {
+    "client-install": "npm install --prefix client",
     "start": "node server.js",
     "server": "nodemon server.js",
-    "test": "npm test"
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Patrice Douge",
   "license": "ISC",
